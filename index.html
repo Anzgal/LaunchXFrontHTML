@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pastreles</title>
+    <style>
+      @import url(https://fonts.googleapis.com/css?family=Dancing+Script:700);
+      @import url(https://fonts.googleapis.com/css?family=Crimson+Text:400,600,700,400italic);
+
+      body {
+        background-color: #ffd4d7;
+        display: block;
+        margin: 8px;
+        font: 400 16px/1.8 "Crimson Text", serif;
+      }
+      header img {
+        display: block;
+        width: 250px;
+        margin: 0 auto;
+        padding-bottom: 20px;
+      }
+      .menu {
+        display: block;
+        width: 85%;
+        margin: 0 auto;
+        padding: 20px;
+        border: 2px;
+        border-color: black;
+        border-style: solid;
+        border-radius: 20px;
+      }
+      .menu-title {
+        text-align: center;
+        font: 700 50px/1.2 "Dancing Script", cursive;
+      }
+      .menu span {
+        border-bottom: 2px dotted black;
+        flex-grow: 1;
+        margin-bottom: 20px; /* Add a little bottom margin to align the dots with the bottom of the text */
+      }
+
+      .menu-item {
+        display: flex;
+      }
+      form {
+        border: 1px solid #b0b1d9;
+        padding: 20px;
+        border-radius: 25px;
+        display: flex;
+        flex-direction: column;
+        width: 85%;
+        margin: 0 auto;
+      }
+      .datos-personales {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+      }
+      .label-input {
+        display: flex;
+        flex-direction: column;
+      }
+      .label-input input {
+        width: 400px;
+      }
+      .personalizar {
+        display: flex;
+        justify-content: space-between;
+      }
+      .enviar {
+        align-self: center;
+        width: 100px;
+        height: 50px;
+        background-color: #b0b1d9;
+        color: white;
+        border: none;
+        border-radius: 15px;
+        cursor: pointer;
+        font-size: 14px;
+        margin: 50px 0 20px 0;
+      }
+      .notas {
+        width: 80%;
+        height: 100px;
+        margin: 0 auto;
+      }
+      table {
+        max-width: 960px;
+        margin: 10px auto;
+      }
+
+      caption {
+        font-size: 1.6em;
+        font-weight: 400;
+        padding: 10px 0;
+      }
+
+      thead th {
+        font-weight: 400;
+        background: #8a97a0;
+        color: #fff;
+      }
+
+      tr {
+        background: #f4f7f8;
+        border-bottom: 1px solid #fff;
+        margin-bottom: 5px;
+      }
+
+      tr:nth-child(even) {
+        background: #e8eeef;
+      }
+
+      th,
+      td {
+        text-align: left;
+        padding: 40px;
+        font-weight: 300;
+      }
+
+      tfoot tr {
+        background: none;
+      }
+
+      tfoot td {
+        padding: 10px 2px;
+        font-size: 0.8em;
+        font-style: italic;
+        color: #8a97a0;
+      }
+      .container {
+        width: 80%;
+        margin: 0 auto;
+        padding: 0;
+      }
+      .container li {
+        list-style: none;
+        background-color: #efefef;
+        border: 2px solid #b0b1d9;
+        padding: 5px;
+        transition: background-color 0.3s ease;
+      }
+      footer {
+        background-color: #b0b1d9;
+        padding: 50px;
+        display: flex;
+        justify-content: space-between;
+        margin-top: 50px;
+      }
+      .footer-element {
+        width: 300px;
+        font: 700 20px/1.2 "Dancing Script", cursive;
+      }
+      @media only screen and (max-width: 600px) {
+        .personalizar {
+          display: block;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <img
+        src="https://github.com/Anzgal/LaunchXFrontHTML/blob/main/Logo%20Pastreles.png?raw=true"
+        alt="Pastreles"
+      />
+    </header>
+    <main>
+      <div class="menu">
+        <h2 class="menu-title">Sabores de pasteles</h2>
+        <div class="menu-item">
+          <p>Pastel de chocolate</p>
+          <span></span>
+          <p>$250.00</p>
+        </div>
+        <div class="menu-item">
+          <p>Pastel de fresa</p>
+          <span></span>
+          <p>$280.00</p>
+        </div>
+        <div class="menu-item">
+          <p>Pastel de vainilla</p>
+          <span></span>
+          <p>$210.00</p>
+        </div>
+        <div class="menu-item">
+          <p>Pastel de limón</p>
+          <span></span>
+          <p>$240.00</p>
+        </div>
+        <h2 class="menu-title">Adornos</h2>
+        <div class="menu-item">
+          <p>Chispas de chocolate</p>
+          <span></span>
+          <p>$20.00</p>
+        </div>
+        <div class="menu-item">
+          <p>Fruta del día</p>
+          <span></span>
+          <p>$80.00</p>
+        </div>
+        <div class="menu-item">
+          <p>Galletas</p>
+          <span></span>
+          <p>$30.00</p>
+        </div>
+        <div class="menu-item">
+          <p>Coco rallado</p>
+          <span></span>
+          <p>$15.00</p>
+        </div>
+      </div>
+      <h2 class="menu-title">Haz tu pedido</h2>
+      <form action="">
+        <h3 class="menu-title">Datos personales</h3>
+        <div class="datos-personales">
+          <div class="label-input">
+            <label for="nombre">Nombre</label>
+            <input
+              type="text"
+              id="name"
+              wtx-context="19A81633-6504-42FE-8546-22D3711B71B6"
+            />
+          </div>
+          <div class="label-input">
+            <label for="apellido-p">Apellido paterno</label>
+            <input
+              type="text"
+              id="apellido-p"
+              wtx-context="996D92FC-6577-4A5A-96CC-F092C1FDAF85"
+            />
+          </div>
+          <div class="label-input">
+            <label for="apellido-m">Apellido materno</label>
+            <input
+              type="text"
+              id="apellido-m"
+              wtx-context="5B71D01B-67F2-4181-85BB-6CCEAC63EC5F"
+            />
+          </div>
+          <div class="label-input">
+            <label for="telefono">Telefono de casa</label>
+            <input
+              type="text"
+              id="telefono"
+              wtx-context="D5548971-CB23-46A9-82BD-10D05FB56D09"
+            />
+          </div>
+          <div class="label-input">
+            <label for="celular">Celular</label>
+            <input
+              type="text"
+              id="celular"
+              wtx-context="42ADEB06-2675-4D5C-8889-0F781ADFCD1C"
+            />
+          </div>
+          <div class="label-input">
+            <label for="correo-electronico">Correo electronico</label>
+            <input
+              type="text"
+              id="correo-electronico"
+              wtx-context="A5F21252-5314-40A8-B35E-CE429E9F9132"
+            />
+          </div>
+        </div>
+        <p style="font-weight: bold; margin-top: 30px; font-size: large">
+          Arma tu pastel
+        </p>
+        <div class="personalizar">
+          <div>
+            <p style="margin-top: 0px; margin-bottom: 0px; font-weight: bold">
+              Selecciona al menos un sabor
+            </p>
+            <label
+              ><input type="checkbox" id="cbox1" value="chocolate" />
+              Chocolate</label
+            ><br />
+            <label
+              ><input type="checkbox" id="cbox2" value="fresa" /> Fresa</label
+            ><br />
+            <label
+              ><input type="checkbox" id="cbox3" value="vainilla" />
+              Vainilla</label
+            ><br />
+            <label
+              ><input type="checkbox" id="cbox4" value="limon" /> Limón</label
+            ><br />
+          </div>
+          <div>
+            <p style="margin-top: 0px; margin-bottom: 0px; font-weight: bold">
+              Selecciona los adornos
+            </p>
+            <label
+              ><input type="checkbox" id="cbox1" value="Chispas" /> Chispas de
+              chocolate</label
+            ><br />
+            <label
+              ><input type="checkbox" id="cbox2" value="fruta" /> Fruta del
+              día</label
+            ><br />
+            <label
+              ><input type="checkbox" id="cbox3" value="galletas" />
+              Galletas</label
+            ><br />
+            <label
+              ><input type="checkbox" id="cbox4" value="coco" /> Coco
+              rallado</label
+            ><br />
+          </div>
+        </div>
+        <p
+          style="
+            font-weight: bold;
+            padding-top: 30px;
+            font-size: large;
+            margin: 0 auto;
+          "
+        >
+          Descripción del pastel
+        </p>
+        <input
+          class="notas"
+          type="text"
+          name="notas"
+          id="notas"
+          placeholder="Escribe aquí notas o instrucciones para tu pastel"
+        />
+        <button class="enviar" name="button">Enviar</button>
+      </form>
+    </main>
+
+    <h2 class="menu-title">Información para el pastelero</h2>
+
+    <table>
+      <caption>
+        Inventario de sabores
+      </caption>
+      <thead>
+        <tr>
+          <th scope="col">Sabor</th>
+          <th scope="col">Cantidad</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">Chocolate</th>
+          <td>24</td>
+        </tr>
+        <tr>
+          <th scope="row">Fresa</th>
+          <td>10</td>
+        </tr>
+        <tr>
+          <th scope="row">Vainilla</th>
+          <td>2</td>
+        </tr>
+        <tr>
+          <th scope="row">Limón</th>
+          <td>5</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2 class="menu-title">Últimos pedidos</h2>
+    <ul class="container">
+      <li>
+        <span style="font-weight: bold">Nombre:</span> Pepe el grillo
+        <span style="font-weight: bold">Sabor:</span> Chocolate
+        <span style="font-weight: bold">Adornos:</span> Coco rallado
+      </li>
+      <li>
+        <span style="font-weight: bold">Nombre:</span> Matías Hernandez
+        <span style="font-weight: bold">Sabor:</span> Limón
+        <span style="font-weight: bold">Adornos:</span> Chispas de chocolate
+      </li>
+      <li>
+        <span style="font-weight: bold">Nombre:</span> Mauricio Godinez
+        <span style="font-weight: bold">Sabor:</span> Vainilla
+        <span style="font-weight: bold">Adornos:</span> Fruta del día
+      </li>
+      <li>
+        <span style="font-weight: bold">Nombre:</span> Roberto Sandoval
+        <span style="font-weight: bold">Sabor:</span> Fresa
+        <span style="font-weight: bold">Adornos:</span> Galletas
+      </li>
+      <li>
+        <span style="font-weight: bold">Nombre:</span> Stephani Álvarez
+        <span style="font-weight: bold">Sabor:</span> Chocolate, Fresa
+        <span style="font-weight: bold">Adornos:</span> Coco rallado
+      </li>
+    </ul>
+
+    <footer>
+      <div class="footer-element">
+        <p>
+          Dirección: Calle Urano #1039 Colonia Galáctica Alcaldía Interespacial
+          Ciudad de México CP 1450304
+        </p>
+      </div>
+      <div class="footer-element">
+        <p>Teléfono: 55-4340-3542</p>
+      </div>
+      <div class="footer-element">
+        <p>Horarios de atención 24 horas los 7 días de la semana</p>
+      </div>
+    </footer>
+  </body>
+</html>
